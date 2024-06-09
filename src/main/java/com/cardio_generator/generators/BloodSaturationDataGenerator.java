@@ -4,10 +4,17 @@ import java.util.Random;
 
 import com.cardio_generator.outputs.OutputStrategy;
 
+/**
+ * This class implemets the PatientDataGenerator interface to generate plausable bloodsaturation data of a patient.
+ */
 public class BloodSaturationDataGenerator implements PatientDataGenerator {
     private static final Random random = new Random();
     private int[] lastSaturationValues;
 
+    /**
+     * Constructs a BloodSaturationDataGenerator for a given number of patients and initialises a random plausable baseline
+     * @param patientCount the number of patients to be used in the data generation.
+     */
     public BloodSaturationDataGenerator(int patientCount) {
         lastSaturationValues = new int[patientCount + 1];
 

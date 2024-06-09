@@ -4,11 +4,22 @@ import java.util.Random;
 
 import com.cardio_generator.outputs.OutputStrategy;
 
+/**
+ * This class implemets the PatientDataGenerator interface to generate plausable medcial alert data of a patient.
+ */
 public class AlertGenerator implements PatientDataGenerator {
+
+    /**
+     * A constant that holds the random seed.
+     */
     // Renamed constant to UPPER_SNAKECASE and renamed variable to lowerCamelCase
     public static final Random RANDOM_GENERATOR = new Random();
     private boolean[] slertStates; // false = resolved, true = pressed
 
+    /**
+     * Constructs AlertGenerator and initialises a boolean array for the patients alerts.
+     * @param patientCount the number of patients in the simulation that need to be inilialised.
+     */
     public AlertGenerator(int patientCount) {
         slertStates = new boolean[patientCount + 1];
     }

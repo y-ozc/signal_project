@@ -7,10 +7,19 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * This class handles the output using a file.
+ * Imlements OutputStrategy interface.
+ */
+
 // Capitalised class name to UpperCamelCase
 public class FileOutputStrategy implements OutputStrategy {
     // Renamed variable to lowerCamelCase
     private String baseDirectory;
+
+    /**
+     * Constnat holds the file path for the directory
+     */
     // Renamed constant to UPPER_SNAKE_CASE
     public final ConcurrentHashMap<String, String> FILE_MAP = new ConcurrentHashMap<>();
 
@@ -18,6 +27,9 @@ public class FileOutputStrategy implements OutputStrategy {
         this.baseDirectory = baseDirectory;
     }
 
+    /**
+     * Implementation of the method from OutputStartegy interface where a file directory is created and the data is written.
+     */
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
         try {
